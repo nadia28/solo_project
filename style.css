@@ -1,0 +1,124 @@
+* {
+    padding: 0;
+    margin: 0;
+    
+}
+
+html {
+	box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+/*Matching game board with all the back faces on top of the front faces*/
+
+.container {
+    width: 620px;
+    height: 620px;
+    margin: auto;
+    background-color: #e4f2ed;
+    display: flex;
+	justify-content: center;
+	align-items: center;
+    flex-direction: column;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.matching_game {
+    width: 540px;
+    height: 540px;
+    border: 11px solid lightseagreen;
+    border-radius: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 15px;
+    margin: 5px;
+    background-color: lightcyan;
+    perspective: 1000px;
+}
+
+.matching_card {
+    width: 19%;
+    height: 20%;
+    display: flex;
+    flex-wrap: wrap;
+    border: 2px solid darkturquoise;
+    border-radius: 20px;
+    box-shadow: 9px 9px 23px darkgrey;
+    margin: 10px;
+    margin-left: 17px;
+    margin-top: 10px;
+    justify-content: center;
+    position: relative;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .5s;
+ 
+
+}
+
+.front_face,
+.back_face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    border-radius: 30px;
+    backface-visibility: hidden;
+}
+
+.front_face {
+    transform: rotateY(180deg);
+}
+
+.matching_card:active {
+    transform: scale(.90);
+    transition: transform .2s;
+}
+
+.matching_card.flipped {
+    transform: rotateY(180deg);
+}
+
+/*Score panel styling*/
+
+.score_panel {
+	text-align: left;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.score_panel .stars {
+	display: inline-block;
+	margin: 0 5px 0 0;
+}
+
+.score_panel .stars li {
+	list-style: none;
+	display: inline-block;
+}
+
+.timer {
+	display: inline-block;
+	margin: 5px;
+}
+
+button {
+    float: right;
+    width: 80px;
+    height: 20px;
+    border: 1px solid rgb(25, 73, 73);
+    border-radius: 5px;
+    background-color: darkturquoise;
+    text-align: center;
+    margin-left: 20px;
+    margin-top: 5px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+
+    

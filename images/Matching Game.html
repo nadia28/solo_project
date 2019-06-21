@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<!-- saved from url=(0065)file:///Users/apple/Desktop/Seitech2019/chingu_project/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="file:///Users/apple/Desktop/Seitech2019/chingu_project/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./Matching Game_files/font-awesome.min.css">
+
+    <title>Matching Game</title>
+</head>
+<body>
+
+<!-- Main container-->
+<div class="container">
+
+    <header>
+        <h3>Matching Game</h3>
+    </header>
+
+
+    <!-- score panel-->
+        <section class="score_panel">
+            <ul class="stars">
+                <li> ★</li>
+                <li> ☆</li>
+                <li> ☆</li>
+            </ul>
+    <!-- Timer-->
+        <div class="timer">
+            <span>00:00</span>
+        </div>
+    
+    <!-- Moves Count-->
+        <span class="moves">0</span> Move(s)
+
+    <!-- Reload -->
+                <!--<i style="font-size:24px" class="fa">&#xf021;</i>-->
+                <button>New Game</button>
+      
+            
+        </section>
+
+    <!-- Main div matching game-->
+    <div class="matching_game">
+
+        <!-- individual memory card-->
+        <div data-type="zoom" class="matching_card" style="order: 5;">
+            <img class="front_face" src="file:///Users/apple/Desktop/Seitech2019/chingu_project/images/zoom.png" alt="Zoom">
+            <img class="back_face" src="file:///Users/apple/Desktop/Seitech2019/chingu_project/images/code.jpg" alt="Code">   
+        </div>
+
+        <div data-type="zoom" class="matching_card" style="order: 11;">
+            <img class="front_face" src="file:///Users/apple/Desktop/Seitech2019/chingu_project/images/zoom.png" alt="Zoom">
+            <img class="back_face" src="file:///Users/apple/Desktop/Seitech2019/chingu_project/images/code.jpg" alt="Code">         
+        </div>
+
+        <div data-type="moustache" class="matching_card" style="order: 9;">
+            <img class="front_face" src="file:///Users/apple/Desktop/Seitech2019/chingu_project/images/moustache.png" alt="Moustache">
+            <img class="back_face" src="file:///Users/apple/Desktop/Seitech2019/chingu_project/images/code.jpg" alt="Code">       
+        </div>
+
+        <div data-type="moustache" class="matching_card" style="order: 8;">
+            <img class="front_face" src="file:///Users/apple/Desktop/Seitech2019/chingu_project/images/moustache.png" alt="Moustache">
+            <img class="back_face" src="file:///Users/apple/Desktop/Seitech2019/chingu_project/images/code.jpg" alt="Code">        
+        </div>
+        
+        <div data-type="heart" class="matching_card" style="order: 6;">
+            <img class="front_face" src="file:///Users/apple/Desktop/Seitech2019/chingu_project/images/heart.png" alt="Heart">
+            <img class="back_face" src="file:///Users/apple/Desktop/Seitech2019/chingu_project/images/code.jpg" alt="Code">       
+        </div>
+
+        <div data-type="heart" class="matching_card" style="order: 4;">
+            <img class="front_face" src="file:///Users/apple/Desktop/Seitech2019/chingu_project/images/heart.png" alt="Heart">
+            <img class="back_face" src="file:///Users/apple/Desktop/Seitech2019/chingu_project/images/code.jpg" alt="Code">          
+        </div>
+
+
+        <div data-type="apple" class="matching_card" style="order: 9;">
+            <img class="front_face" src="file:///Users/apple/Desktop/Seitech2019/chingu_project/images/apple.png" alt="Apple">
+            <img class="back_face" src="file:///Users/apple/Desktop/Seitech2019/chingu_project/images/code.jpg" alt="Code">     
+         </div>
+
+        <div data-type="apple" class="matching_card" style="order: 10;">
+            <img class="front_face" src="file:///Users/apple/Desktop/Seitech2019/chingu_project/images/apple.png" alt="Apple">
+            <img class="back_face" src="file:///Users/apple/Desktop/Seitech2019/chingu_project/images/code.jpg" alt="Code">       
+        </div>
+
+        <div data-type="arrow" class="matching_card" style="order: 13;">
+            <img class="front_face" src="file:///Users/apple/Desktop/Seitech2019/chingu_project/images/arrow.png" alt="Arrow">
+            <img class="back_face" src="file:///Users/apple/Desktop/Seitech2019/chingu_project/images/code.jpg" alt="Code">         
+        </div>
+
+        <div data-type="arrow" class="matching_card" style="order: 7;">
+            <img class="front_face" src="file:///Users/apple/Desktop/Seitech2019/chingu_project/images/arrow.png" alt="Arrow">
+            <img class="back_face" src="file:///Users/apple/Desktop/Seitech2019/chingu_project/images/code.jpg" alt="Code">       
+        </div>
+
+        <div data-type="equality" class="matching_card" style="order: 7;">
+            <img class="front_face" src="file:///Users/apple/Desktop/Seitech2019/chingu_project/images/equality.png" alt="Equality">
+            <img class="back_face" src="file:///Users/apple/Desktop/Seitech2019/chingu_project/images/code.jpg" alt="Code">         
+        </div>
+
+        <div data-type="equality" class="matching_card" style="order: 13;">
+            <img class="front_face" src="file:///Users/apple/Desktop/Seitech2019/chingu_project/images/equality.png" alt="Equality">
+            <img class="back_face" src="file:///Users/apple/Desktop/Seitech2019/chingu_project/images/code.jpg" alt="Code">         
+        </div>
+
+        <div data-type="rose" class="matching_card" style="order: 10;">
+            <img class="front_face" src="file:///Users/apple/Desktop/Seitech2019/chingu_project/images/rose.png" alt="Rose">
+            <img class="back_face" src="file:///Users/apple/Desktop/Seitech2019/chingu_project/images/code.jpg" alt="Code">        
+        </div>
+
+         <div data-type="rose" class="matching_card" style="order: 13;">
+            <img class="front_face" src="file:///Users/apple/Desktop/Seitech2019/chingu_project/images/rose.png" alt="Rose">
+            <img class="back_face" src="file:///Users/apple/Desktop/Seitech2019/chingu_project/images/code.jpg" alt="Code">        
+        </div>
+
+        <div data-type="balloon" class="matching_card" style="order: 7;">
+            <img class="front_face" src="file:///Users/apple/Desktop/Seitech2019/chingu_project/images/balloon.png" alt="Balloon">
+            <img class="back_face" src="file:///Users/apple/Desktop/Seitech2019/chingu_project/images/code.jpg" alt="Code">        
+        </div>
+
+        <div data-type="balloon" class="matching_card" style="order: 6;">
+            <img class="front_face" src="file:///Users/apple/Desktop/Seitech2019/chingu_project/images/balloon.png" alt="Balloon">
+            <img class="back_face" src="file:///Users/apple/Desktop/Seitech2019/chingu_project/images/code.jpg" alt="Code">      
+        </div>
+
+        
+
+
+
+
+
+
+
+
+
+    </div>
+</div>
+<script src="file:///Users/apple/Desktop/Seitech2019/chingu_project/main.js"></script>
+
+</body></html>

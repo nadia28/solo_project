@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Matching Game</title>
 </head>
 <body>
@@ -74,7 +74,6 @@
             <img class="back_face" src="images/code.jpg" alt="Code" />          
         </div>
 
-
         <div data-type="apple" class="matching_card">
             <img class="front_face" src="images/apple.png" alt="Apple" />
             <img class="back_face" src="images/code.jpg" alt="Code" />     
@@ -125,14 +124,16 @@
             <img class="back_face" src="images/code.jpg" alt="Code" />      
         </div>
 
-        
-
-
-
-
-
-
-
+        <!-- Modal for the winning player-->
+        <div class="victory_modal">
+            <div class="modal_head">CONGRATULATIONS!!!</div>
+            <div class="modal_body">
+                <p>You are the Winner!</p>
+                <p>Your score is  </p>
+                <p>You made ... moves</p>
+                <p>Your time is ....</p>
+            </div>
+        </div>
 
 
     </div>

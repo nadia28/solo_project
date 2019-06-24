@@ -1,5 +1,6 @@
 // selecting all the matching cards of the game
 const cards = document.querySelectorAll('.matching_card');
+const card = document.querySelector('.matching_card');
 // start btn to start the game
 const start = document.querySelector('.start');
 //selecting timer
@@ -8,6 +9,11 @@ const timer = document.querySelector('.timer');
 const counter = document.querySelector('.moves');
 // star ratings
 const stars = document.getElementsByTagName('li');
+//congratulations modal
+const modal = document.querySelector('.victory_modal');
+// selecting the game board
+const gameBoard = document.querySelector('.matching_game');
+
 // assinging variables
 let prevCard = null;
 let checkingCard = false;
@@ -17,43 +23,52 @@ let numOfMoves = 0;
 let second = 0;
 let minute = 0;
 let interval;
+let clickSound = new Audio("sound/card-flip.wav");
+
 
 
 // flip the card 
-
-function flipCard(card){
-  if (disableBoard) return;
-  if (this === prevCard) return;
-    this.classList.add('flipped');
-      if (checkingCard) {
-        if(prevCard.getAttribute('data-type') === this.getAttribute('data-type')) {
-            gameScore ++;
-            this.removeEventListener('click', flipCard); // if cards match removing event listeners from both
-            prevCard.removeEventListener('click', flipCard);
-            // setting timeout to announce the winner after the last pair flipped
-            setTimeout(() => {
-              winGame(); // if user opens all 8 pairs he wins
-            }, 1000);
-            prevCard = this;
-            movesCounter();      
-          resetBoard();
-        } else {
-            disableBoard = true;
-            setTimeout(() => { 
-              this.classList.remove('flipped');
-              prevCard.classList.remove('flipped');
-              prevCard = this;
-              disableBoard = false;
+    function flipCard(card){
+      if (disableBoard) return;
+      if (this === prevCard) return;
+        this.classList.add('flipped');
+          if (checkingCard) {
+            if(prevCard.getAttribute('data-type') === this.getAttribute('data-type')) {
+                gameScore ++;
+                
+                prevCard.removeEventListener('click', playSound);
+              
+                this.removeEventListener('click', flipCard); // if cards match removing event listeners from both
+                prevCard.removeEventListener('click', flipCard);
+              
+                // if cards match removing event listeners from both
+              
+                // setting timeout to announce the winner after the last pair flipped
+                setTimeout(() => {
+                  this.removeEventListener('click', playSound);
+                  winGame(); // if user opens all 8 pairs he wins
+                }, 1000);
+                prevCard = this;
+                movesCounter();      
               resetBoard();
-            }, 1000);
-              movesCounter();
-          // flipping back current card
+            } else {
+                disableBoard = true;     
+                setTimeout(() => { 
+                  this.classList.remove('flipped');
+                  prevCard.classList.remove('flipped');          
+                  prevCard = this;
+                  disableBoard = false;
+                  resetBoard();
+                }, 1000);
+                  movesCounter();
+              // flipping back current card
+            }
+          } else {
+            prevCard = this;
+            
         }
-      } else {
-        prevCard = this;
-    }
-      checkingCard = !checkingCard; 
-  }
+          checkingCard = !checkingCard; 
+      }
 
     // reseting the board, so we cannot click on the same card twice once it turned
     function resetBoard(){
@@ -69,18 +84,29 @@ function flipCard(card){
       })
     };
 
+
+     //sound effect function while clicking the cards
+    function playSound(card){
+       clickSound.play();
+      }
+
     // Adding eventListener to cards
     function turnCard(){
       cards.forEach(function(card){
           card.addEventListener('click', flipCard);
+          card.addEventListener('click', playSound);
       })
     }
 
-    // congatulations function 
+    // congratulations function 
     function winGame(score){      
       if(gameScore === 8){ 
-        alert('You are the WINNER, your score is ' + gameScore + ' ,you made ' + numOfMoves + ' moves' + ' within ' + minute + ' mins ' + second + ' secs');
+        modal.style.visibility = "visible";
+        modal.getElementsByTagName('p')[1].innerHTML = "Your score is " + gameScore;
+        modal.getElementsByTagName('p')[2].innerHTML= "You made  " + numOfMoves;
+        modal.getElementsByTagName('p')[3].innerHTML= "Your time is " + minute + ' mins ' + second + ' secs';    
         resetTimer();
+        counter.innerHTML = 0;
       }  
     }
 
@@ -136,7 +162,6 @@ function flipCard(card){
         }
 
       
-
       // starting new game with new game button
       function startGame(){
         for (let i = 0; i < cards.length; i ++) {
@@ -144,6 +169,7 @@ function flipCard(card){
           gameScore = 0;
           numOfMoves= 0;
           counter.innerHTML = numOfMoves;
+          modal.style.visibility = "hidden";
           resetTimer();     
           resetRating();
           shuffle(cards);
@@ -152,8 +178,7 @@ function flipCard(card){
         }
       }
 
-    //Adding eventListener to New Game button to start the game over again
-    start.addEventListener('click', startGame);
+      //Adding event listener to start button
+      start.addEventListener('click', startGame);
+     
    
-
-

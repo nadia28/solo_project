@@ -103,7 +103,7 @@ let clickSound = new Audio("sound/card-flip.wav");
       if(gameScore === 8){ 
         modal.style.visibility = "visible";
         modal.getElementsByTagName('p')[1].innerHTML = "Your score is " + gameScore;
-        modal.getElementsByTagName('p')[2].innerHTML= "You made  " + numOfMoves;
+        modal.getElementsByTagName('p')[2].innerHTML= "You made  " + numOfMoves + " moves";
         modal.getElementsByTagName('p')[3].innerHTML= "Your time is " + minute + ' mins ' + second + ' secs';    
         resetTimer();
         counter.innerHTML = 0;
